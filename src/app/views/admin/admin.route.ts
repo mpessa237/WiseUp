@@ -6,6 +6,10 @@ import { EarningComponent } from './earning/earning.component'
 import { SettingComponent } from './setting/setting.component'
 import { EditCourseDetailComponent } from './courses/edit-course-detail/edit-course-detail.component'
 import { Error404Component } from './error404/error404.component'
+import { GetAllBlogComponent } from './blogs/get-all-blog/get-all-blog.component'
+import { CreatePostComponent } from './blogs/create-post/create-post.component'
+import { CreateMentorComponent } from './mentors/mentors/create-mentor/create-mentor.component'
+import { GetAllMentorComponent } from './mentors/mentors/get-all-mentor/get-all-mentor.component'
 
 export const ADMIN_ROUTES: Route[] = [
   {
@@ -14,19 +18,24 @@ export const ADMIN_ROUTES: Route[] = [
     data: { title: 'Admin Dashboard' },
   },
   {
-    path: 'student-list',
-    component: StudentListComponent,
-    data: { title: 'Admin Student List' },
+    path:"blogs",
+    component:GetAllBlogComponent
   },
   {
-    path: 'review',
-    component: ReviewComponent,
-    data: { title: 'Admin Review' },
+    path:"blogs/posts/create",
+    component:CreatePostComponent
   },
   {
-    path: 'earning',
-    component: EarningComponent,
-    data: { title: 'Admin Earning' },
+    path:"mentors/create",
+    component:CreateMentorComponent
+  },
+  {
+    path:"mentors/get-all",
+    component:GetAllMentorComponent
+  },
+  {
+    path:"blogs/posts/create",
+    component:CreatePostComponent
   },
   {
     path: 'setting',
