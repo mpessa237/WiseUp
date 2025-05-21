@@ -145,10 +145,16 @@ export const CATEGORY_MENU_ITEMS: MenuItemType[] = [
 export const DEMO_MENU_ITEMS: MenuItemType[] = [
   {
     key: 'demo',
-    title: 'Demos',
+    title: 'Accueil',
     icon: 'bi bi-house',
     subItems: [
       {
+        key: 'defaultHome',
+        title: 'Home',
+        link: '/index-1',
+        parentKey: 'demo',
+      }
+    /*  {
         key: 'defaultHome',
         title: 'Home Default',
         link: '/index-1',
@@ -213,7 +219,7 @@ export const DEMO_MENU_ITEMS: MenuItemType[] = [
         title: 'Home Workshop',
         link: '/index-11',
         parentKey: 'demo',
-      },
+      }, */
     ],
   },
   {
@@ -357,6 +363,7 @@ export const DEMO_MENU_ITEMS: MenuItemType[] = [
             parentKey: 'heroBanner',
           },
         ],
+        
       },
       {
         key: 'instructorList',
@@ -753,6 +760,34 @@ export const DEMO_MENU_ITEMS: MenuItemType[] = [
       },
     ],
   },
+    {
+    key: 'mentors',
+    title: 'Mentors',
+    icon: 'bi bi-speedometer2',
+    subItems: [
+                {
+            key: 'mentors-list',
+            title: 'Mentors List',
+            icon: 'bi bi-grid-fill',
+            link: '/instructor-list',
+            parentKey: 'mentors',
+          }
+    ],
+  },
+      {
+    key: 'blogs',
+    title: 'Blog',
+    icon: 'bi bi-speedometer2',
+    subItems: [
+                {
+            key: 'mentors-list',
+            title: 'Mentors List',
+            icon: 'bi bi-grid-fill',
+            link: '/blog-grid',
+            parentKey: 'blogs',
+          }
+    ],
+  },
 ]
 
 export const MEGA_MENU_ITEMS: MenuItemType[] = [
@@ -1060,82 +1095,94 @@ export const ADMIN_MENU_ITEMS: MenuItemType[] = [
     link: '/admin/dashboard',
     icon: 'bi bi-house',
   },
+  // {
+  //   key: 'pages',
+  //   title: 'Pages',
+  //   isTitle: true,
+  // },
   {
-    key: 'pages',
-    title: 'Pages',
-    isTitle: true,
-  },
-  {
-    key: 'adminCourses',
-    title: 'Courses',
-    icon: 'bi bi-basket',
+    key: 'mentors',
+    title: 'Mentors',
+    icon: 'fas fa-user-tie',
     isCollapsed: true,
     subItems: [
       {
-        key: 'courseList',
-        title: 'All Courses',
-        link: '/admin/course/list',
+        key: 'mentors',
+        title: 'Mentors',
+        link: 'mentors/get-all',
         parentKey: 'adminCourses',
       },
       {
-        key: 'courseCategory',
-        title: 'Course Category',
+        key: 'compentences',
+        title: 'Compétences',
         link: '/admin/course/category',
         parentKey: 'adminCourses',
-      },
-      {
-        key: 'courseDetail',
-        title: 'Course Detail',
-        link: '/admin/course/detail',
-        parentKey: 'adminCourses',
-      },
+      }
     ],
   },
   {
-    key: 'students',
+    key: 'Blog',
+    title: 'Blog',
+    link: 'blogs',
+    icon: 'fas fa-blog',
+  },
+  {
+    key: 'Forum',
+    title: 'Forum',
+    link: '/admin/student-list',
+    icon: 'fab fa-rocketchat',
+  },
+  {
+    key: 'Students',
     title: 'Students',
     link: '/admin/student-list',
     icon: 'fas fa-user-graduate',
   },
   {
-    key: 'instructors',
-    title: 'Instructors',
-    icon: 'fas fa-user-tie',
-    isCollapsed: true,
-    subItems: [
-      {
-        key: 'instructorsList',
-        title: 'Instructors',
-        link: '/admin/instructor/list',
-        parentKey: 'instructors',
-      },
-      {
-        key: 'instructorsDetail',
-        title: 'Instructor Detail',
-        link: '/admin/instructor/detail',
-        parentKey: 'instructors',
-      },
-      {
-        key: 'instructorsRequest',
-        title: 'Instructor requests',
-        link: '/admin/instructor/request',
-        badge: '2',
-        parentKey: 'instructors',
-      },
-    ],
+    key: 'Orientation',
+    title: 'Orientation',
+    link: '/admin/student-list',
+    icon: 'fas fa-compass',
   },
-  {
-    key: 'reviews',
-    title: 'Reviews',
-    link: '/admin/review',
-    icon: 'far fa-comment-dots',
-  },
-  {
-    key: 'earnings',
-    title: 'Earnings',
-    link: '/admin/earning',
-    icon: 'far fa-chart-bar',
-  },
+  // {
+  //   key: 'instructors',
+  //   title: 'Instructors',
+  //   icon: 'fas fa-user-tie',
+  //   isCollapsed: true,
+  //   subItems: [
+  //     {
+  //       key: 'instructorsList',
+  //       title: 'Instructors',
+  //       link: '/admin/instructor/list',
+  //       parentKey: 'instructors',
+  //     },
+  //     {
+  //       key: 'instructorsDetail',
+  //       title: 'Instructor Detail',
+  //       link: '/admin/instructor/detail',
+  //       parentKey: 'instructors',
+  //     },
+  //     {
+  //       key: 'instructorsRequest',
+  //       title: 'Instructor requests',
+  //       link: '/admin/instructor/request',
+  //       badge: '2',
+  //       parentKey: 'instructors',
+  //     },
+  //   ],
+  // },
+  // {
+  //   key: 'reviews',
+  //   title: 'Reviews',
+  //   link: '/admin/review',
+  //   icon: 'far fa-comment-dots',
+  // },
+  // {
+  //   key: 'earnings',
+  //   title: 'Earnings',
+  //   link: '/admin/earning',
+  //   icon: 'far fa-chart-bar',
+  // },
   {
     key: 'settings',
     title: 'Admin Settings',
